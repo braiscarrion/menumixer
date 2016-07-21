@@ -1,0 +1,30 @@
+{
+    "menu1": {
+        "desayuno": ["item 1", "item 2"],
+        "almuerzo": [],
+        "comida": [],
+        "merienda": [],
+        "cena": []
+    },
+    "menu2": {
+        "desayuno": [],
+        "almuerzo": [],
+        "comida": [],
+        "merienda": [],
+        "cena": []
+    },
+    "menu3": {
+        "desayuno": [],
+        "almuerzo": [],
+        "comida": [],
+        "merienda": [],
+        "cena": []
+    },
+    "menu4": {
+        "desayuno": [],
+        "almuerzo": [],
+        "comida": [],
+        "merienda": [],
+        "cena": []
+    }
+}
