@@ -1,0 +1,190 @@
+{
+    "cereal": {
+        "1": {
+            "nombre": "arroz integral",
+            "cantidad": 0.25
+        },
+        "2": {
+            "nombre": "arroz basmati",
+            "cantidad": 0.25
+        },
+        "3": {
+            "nombre": "quinoa",
+            "cantidad": 0.5
+        },
+        "4": {
+            "nombre": "fideos",
+            "cantidad": 0.25
+        },
+        "5": {
+            "nombre": "pasta integral",
+            "cantidad": 0.5
+        },
+        "6": {
+            "nombre": "pan centeno",
+            "cantidad": 1
+        }
+    },
+    "verdura": {
+        "1": {
+            "nombre": "brocoli",
+            "cantidad": 0.5
+        },
+        "2": {
+            "nombre": "espinacas",
+            "cantidad": 0.5
+        },
+        "3": {
+            "nombre": "zanahorias",
+            "cantidad": 0.5
+        },
+        "4": {
+            "nombre": "calabaza",
+            "cantidad": 0.5
+        },
+        "5": {
+            "nombre": "habas",
+            "cantidad": 0.5
+        },
+        "6": {
+            "nombre": "guisantes",
+            "cantidad": 0.5
+        },
+        "7": {
+            "nombre": "lentils",
+            "cantidad": 0.5
+        },
+        "8": {
+            "nombre": "ensalada",
+            "cantidad": 1
+        },
+        "9": {
+            "nombre": "maiz dulce",
+            "cantidad": 0.5
+        },
+        "10": {
+            "nombre": "patata",
+            "cantidad": 0.5
+        },
+        "11": {
+            "nombre": "batata",
+            "cantidad": 0.5
+        },
+        "12": {
+            "nombre": "yuca",
+            "cantidad": 0.5
+        },
+        "13": {
+            "nombre": "tomate",
+            "cantidad": 1
+        }
+    },
+    "fruta": {
+        "1": {
+            "nombre": "cualquier fruta",
+            "cantidad": 150
+        },
+        "2": {
+            "nombre": "mango",
+            "cantidad": 0.5
+        },
+        "3": {
+            "nombre": "piña",
+            "cantidad": 1
+        },
+        "4": {
+            "nombre": "sandia",
+            "cantidad": 1
+        },
+        "5": {
+            "nombre": "cerezas",
+            "cantidad": 1
+        },
+        "6": {
+            "nombre": "higos",
+            "cantidad": 3
+        }
+    },
+    "lacteo": {
+        "1": {
+            "nombre": "leche",
+            "cantidad": 1
+        },
+        "2": {
+            "nombre": "yogurt",
+            "cantidad": 200
+        },
+        "3": {
+            "nombre": "queso",
+            "cantidad": 40
+        }
+    },
+    "carne": {
+        "1": {
+            "nombre": "pavo",
+            "cantidad": 80
+        },
+        "2": {
+            "nombre": "pollo",
+            "cantidad": 80
+        },
+        "3": {
+            "nombre": "pescado blanco",
+            "cantidad": 100
+        },
+        "4": {
+            "nombre": "cangrejo",
+            "cantidad": 100
+        },
+        "5": {
+            "nombre": "gambas",
+            "cantidad": 100
+        },
+        "6": {
+            "nombre": "salom",
+            "cantidad": 100
+        },
+        "7": {
+            "nombre": "canguro",
+            "cantidad": 65
+        },
+        "8": {
+            "nombre": "ternera",
+            "cantidad": 65
+        },
+        "9": {
+            "nombre": "cordero",
+            "cantidad": 65
+        },
+        "10": {
+            "nombre": "huevo",
+            "cantidad": 2
+        },
+        "11": {
+            "nombre": "tofu",
+            "cantidad": 170
+        },
+        "12": {
+            "nombre": "atun",
+            "cantidad": 100
+        }
+    },
+    "grasas": {
+        "1": {
+            "nombre": "margarina",
+            "cantidad": 10
+        },
+        "2": {
+            "nombre": "aceite de oliva",
+            "cantidad": 1.5
+        },
+        "3": {
+            "nombre": "aguacate",
+            "cantidad": 25
+        },
+        "4": {
+            "nombre": "nueces",
+            "cantidad": 10
+        }
+    }
+}
