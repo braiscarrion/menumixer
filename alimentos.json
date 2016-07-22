@@ -2,189 +2,233 @@
     "cereal": {
         "1": {
             "nombre": "arroz integral",
-            "cantidad": 0.25
+            "cantidad": 0.25,
+            "medida": "tazas"
         },
         "2": {
             "nombre": "arroz basmati",
-            "cantidad": 0.25
+            "cantidad": 0.25,
+            "medida": "tazas"
         },
         "3": {
             "nombre": "quinoa",
-            "cantidad": 0.5
+            "cantidad": 0.5,
+            "medida": "tazas"
         },
         "4": {
             "nombre": "fideos",
-            "cantidad": 0.25
+            "cantidad": 0.25,
+            "medida": "tazas"
         },
         "5": {
             "nombre": "pasta integral",
-            "cantidad": 0.5
+            "cantidad": 0.5,
+            "medida": "tazas"
         },
         "6": {
             "nombre": "pan centeno",
-            "cantidad": 1
+            "cantidad": 1,
+            "medida": "rebanadas"
         }
     },
     "verdura": {
         "1": {
             "nombre": "brocoli",
-            "cantidad": 0.5
+            "cantidad": 0.5,
+            "medida": "tazas"
         },
         "2": {
             "nombre": "espinacas",
-            "cantidad": 0.5
+            "cantidad": 0.5,
+            "medida": "tazas"
         },
         "3": {
             "nombre": "zanahorias",
-            "cantidad": 0.5
+            "cantidad": 0.5,
+            "medida": "tazas"
         },
         "4": {
             "nombre": "calabaza",
-            "cantidad": 0.5
+            "cantidad": 0.5,
+            "medida": "tazas"
         },
         "5": {
             "nombre": "habas",
-            "cantidad": 0.5
+            "cantidad": 0.5,
+            "medida": "tazas"
         },
         "6": {
             "nombre": "guisantes",
-            "cantidad": 0.5
+            "cantidad": 0.5,
+            "medida": "tazas"
         },
         "7": {
-            "nombre": "lentils",
-            "cantidad": 0.5
+            "nombre": "lentejas",
+            "cantidad": 0.5,
+            "medida": "tazas"
         },
         "8": {
             "nombre": "ensalada",
-            "cantidad": 1
+            "cantidad": 1,
+            "medida": "tazas"
         },
         "9": {
             "nombre": "maiz dulce",
-            "cantidad": 0.5
+            "cantidad": 0.5,
+            "medida": "tazas"
         },
         "10": {
             "nombre": "patata",
-            "cantidad": 0.5
+            "cantidad": 0.5,
+            "medida": "piezas"
         },
         "11": {
             "nombre": "batata",
-            "cantidad": 0.5
+            "cantidad": 0.5,
+            "medida": "piezas"
         },
         "12": {
             "nombre": "yuca",
-            "cantidad": 0.5
+            "cantidad": 0.5,
+            "medida": "tazas"
         },
         "13": {
             "nombre": "tomate",
-            "cantidad": 1
+            "cantidad": 1,
+            "medida": "piezas"
         }
     },
     "fruta": {
         "1": {
             "nombre": "cualquier fruta",
-            "cantidad": 150
+            "cantidad": 150,
+            "medida": "gramos"
         },
         "2": {
             "nombre": "mango",
-            "cantidad": 0.5
+            "cantidad": 0.5,
+            "medida": "tazas"
         },
         "3": {
             "nombre": "piña",
-            "cantidad": 1
+            "cantidad": 1,
+            "medida": "tazas"
         },
         "4": {
             "nombre": "sandia",
-            "cantidad": 1
+            "cantidad": 1,
+            "medida": "tazas"
         },
         "5": {
             "nombre": "cerezas",
-            "cantidad": 1
+            "cantidad": 1,
+            "medida": "tazas"
         },
         "6": {
             "nombre": "higos",
-            "cantidad": 3
+            "cantidad": 3,
+            "medida": "unidades"
         }
     },
     "lacteo": {
         "1": {
             "nombre": "leche",
-            "cantidad": 1
+            "cantidad": 1,
+            "medida": "tazas"
         },
         "2": {
             "nombre": "yogurt",
-            "cantidad": 200
+            "cantidad": 200,
+            "medida": "gramos"
         },
         "3": {
             "nombre": "queso",
-            "cantidad": 40
+            "cantidad": 40,
+            "medida": "gramos"
         }
     },
     "carne": {
         "1": {
             "nombre": "pavo",
-            "cantidad": 80
+            "cantidad": 80,
+            "medida": "gramos"
         },
         "2": {
             "nombre": "pollo",
-            "cantidad": 80
+            "cantidad": 80,
+            "medida": "gramos"
         },
         "3": {
             "nombre": "pescado blanco",
-            "cantidad": 100
+            "cantidad": 100,
+            "medida": "gramos"
         },
         "4": {
             "nombre": "cangrejo",
-            "cantidad": 100
+            "cantidad": 100,
+            "medida": "gramos"
         },
         "5": {
             "nombre": "gambas",
-            "cantidad": 100
+            "cantidad": 100,
+            "medida": "gramos"
         },
         "6": {
-            "nombre": "salom",
-            "cantidad": 100
+            "nombre": "salmon",
+            "cantidad": 100,
+            "medida": "gramos"
         },
         "7": {
             "nombre": "canguro",
-            "cantidad": 65
+            "cantidad": 65,
+            "medida": "gramos"
         },
         "8": {
             "nombre": "ternera",
-            "cantidad": 65
+            "cantidad": 65,
+            "medida": "gramos"
         },
         "9": {
             "nombre": "cordero",
-            "cantidad": 65
+            "cantidad": 65,
+            "medida": "gramos"
         },
         "10": {
             "nombre": "huevo",
-            "cantidad": 2
+            "cantidad": 2,
+            "medida": "unidades"
         },
         "11": {
             "nombre": "tofu",
-            "cantidad": 170
+            "cantidad": 170,
+            "medida": "gramos"
         },
         "12": {
             "nombre": "atun",
-            "cantidad": 100
+            "cantidad": 100,
+            "medida": "gramos"
         }
     },
     "grasas": {
         "1": {
             "nombre": "margarina",
-            "cantidad": 10
+            "cantidad": 10,
+            "medida": "gramos"
         },
         "2": {
             "nombre": "aceite de oliva",
-            "cantidad": 1.5
+            "cantidad": 1.5,
+            "medida": "cucharadas"
         },
         "3": {
             "nombre": "aguacate",
-            "cantidad": 25
+            "cantidad": 25,
+            "medida": "gramos"
         },
         "4": {
             "nombre": "nueces",
-            "cantidad": 10
+            "cantidad": 10,
+            "medida": "gramos"
         }
     }
 }

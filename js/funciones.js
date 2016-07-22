@@ -126,7 +126,7 @@ function generarContenidoDia() {
 
 
                 var td2 = document.createElement("td");
-                td2.innerHTML = item[2];
+                td2.innerHTML = item[2] + " " + alimentos[item[0]][item[1]].medida;
                 var td3 = document.createElement("td");
                 td3.innerHTML = alimentos[item[0]][item[1]].nombre;
                 var td4 = document.createElement("td");
