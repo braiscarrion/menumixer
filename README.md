@@ -1,2 +1,2 @@
-# help
-healthy eating &amp; lifestyle plan
+# Menu Mixer
+mix the ingredients from your favourite recipes
