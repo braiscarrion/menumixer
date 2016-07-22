@@ -1,6 +1,10 @@
 {
     "menu1": {
-        "desayuno": ["item 1", "item 2"],
+        "desayuno": [
+            ["cereal", "1", 50],
+            ["verdura", "13", 2],
+            ["carne", "2", 16]
+        ],
         "almuerzo": [],
         "comida": [],
         "merienda": [],

@@ -40,7 +40,7 @@ function generarDias() {
 
     }
 
-
+    init();
 }
 
 
@@ -50,7 +50,16 @@ function generarContenidoDia() {
     div.className = "container";
     div.innerHTML += "<br />";
 
+    var alimentos;
 
+    $.ajax({
+        url: 'alimentos.json',
+        async: false,
+        dataType: 'json',
+        success: function (response) {
+            alimentos = response;
+        }
+    });
 
     $.ajax({
         url: 'menus.json',
@@ -78,20 +87,68 @@ function generarContenidoDia() {
             desayunoHeading.className = "panel-heading";
             desayunoHeading.innerHTML = "<h3 class='panel-title'>Desayuno</h3>";
             var desayunoBody = document.createElement("div");
-            desayunoBody.className = "container";
-            desayunoBody.innerHTML = "<ul>";
+            desayunoBody.className = "panel-body";
+
+            var table = document.createElement("table");
+            table.className = "table table-striped table-condensed";
+
+            var thead = document.createElement("thead");
+            thead.innerHTML = "<tr><th>#</th><th>Cantidad</th><th>Alimento</th><th>Grupo</th></tr>";
+
+            var tbody = document.createElement("tbody");
+
 
             response[menu].desayuno.forEach(function (item) {
-                desayunoBody.innerHTML += "<li>" + item + "</li>";
+
+
+                var tr = document.createElement("tr");
+                var td1 = document.createElement("td");
+                var btn = document.createElement("a");
+                btn.className = "btn btn-xs btn-default";
+                btn.setAttribute("tabindex", "0");
+                btn.setAttribute("role", "buttom");
+                btn.setAttribute("data-html", "true");
+                btn.setAttribute("data-toggle", "popover");
+                btn.setAttribute("data-trigger", "focus");
+                btn.setAttribute("title", "Cambiar ingrediente");
+
+                var content = "";
+
+                for(var i = 0; i < Object.keys(alimentos[item[0]]).length ; i++){
+                    content += alimentos[item[0]][i + 1].nombre + "<br />";
+                }
+
+                btn.setAttribute("data-content", content);
+                btn.innerHTML = '<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>';
+
+
+                td1.appendChild(btn);
+
+
+                var td2 = document.createElement("td");
+                td2.innerHTML = item[2];
+                var td3 = document.createElement("td");
+                td3.innerHTML = alimentos[item[0]][item[1]].nombre;
+                var td4 = document.createElement("td");
+                td4.innerHTML = item[0];
+
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                tr.appendChild(td3);
+                tr.appendChild(td4);
+
+                tbody.appendChild(tr);
             });
 
-
-
-            desayunoBody.innerHTML += "</ul>";
+            table.appendChild(thead);
+            table.appendChild(tbody);
+            desayunoBody.appendChild(table);
 
             desayunoPanel.appendChild(desayunoHeading);
             desayunoPanel.appendChild(desayunoBody);
             div.appendChild(desayunoPanel);
+
+
 
 
         },
@@ -105,4 +162,12 @@ function generarContenidoDia() {
     return div;
 
 
+}
+
+function init() {
+
+    //activar popovers
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+    })
 }
