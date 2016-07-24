@@ -102,9 +102,14 @@ function generarContenidoDia() {
 
 
                 var tr = document.createElement("tr");
+                var trid = "tab" + menu + "tr" + item;//itemalimentos[item[0]];
+                trid = trid.replace(",","")
+                tr.id = trid;
                 var td1 = document.createElement("td");
                 var btn = document.createElement("a");
                 btn.className = "btn btn-xs btn-default";
+
+
                 btn.setAttribute("tabindex", "0");
                 btn.setAttribute("role", "buttom");
                 btn.setAttribute("data-html", "true");
@@ -114,11 +119,24 @@ function generarContenidoDia() {
 
                 var content = "";
 
-                for(var i = 0; i < Object.keys(alimentos[item[0]]).length ; i++){
-                    content += alimentos[item[0]][i + 1].nombre + "<br />";
+                for (var i = 0; i < Object.keys(alimentos[item[0]]).length; i++) {
+                    var a = document.createElement('a');
+                    a.className = "deleteLink";
+                    a.setAttribute("role", "buttom");
+                    a.innerHTML = alimentos[item[0]][i + 1].nombre;
+                   a.setAttribute("trid", trid);
+                   a.setAttribute("onclick","cambiaLinea('"+trid+"')");
+                   /*a.addEventListener("click", function(){
+
+                        cambiaLinea(trid);
+                    });
+                    */
+                    //content += "<a class='deleteLink' role='buttom' onclick='cambiaLinea(\"" + trid + "\");return false;'>" + alimentos[item[0]][i + 1].nombre + "</a><br />";
+                    content += a.outerHTML + "<br />";
                 }
 
                 btn.setAttribute("data-content", content);
+
                 btn.innerHTML = '<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>';
 
 
@@ -136,6 +154,9 @@ function generarContenidoDia() {
                 tr.appendChild(td2);
                 tr.appendChild(td3);
                 tr.appendChild(td4);
+
+                tr.setAttribute("data-categoria",item[0]);
+                tr.setAttribute("data-alimento", alimentos[item[0]][item[1]].nombre);
 
                 tbody.appendChild(tr);
             });
@@ -169,5 +190,55 @@ function init() {
     //activar popovers
     $(function () {
         $('[data-toggle="popover"]').popover()
-    })
+    });
+
+
+    $(".deleteLink").click(function () {
+        //do something necessary here
+        //alert("click");
+    });
+
+
+    $(document).ready(function () {
+        $(".deleteLink").on("click", function () {
+            //alert("a");
+            console.log("aaaaaaaaa");
+            console.log(this);
+            var tr = $(this).closest('tr');
+            tr.css("background-color", "#FF3700");
+            tr.fadeOut(400, function () {
+                tr.remove();
+            });
+            return false;
+        });
+    });
+
+}
+
+function cambiaLinea(id) {
+    var tr = document.getElementById(id);
+    //console.log(a);
+    //var td = $(a).closest('td');
+    //console.log(td);
+    //var tr = $(td).closest('tr');
+    
+    var table = $(tr).closest('table');
+
+    //$(tr).css("background-color", "#FF3700");
+    $(tr).addClass("danger");
+    $(tr).fadeOut(200, function () {
+        $(tr).remove();
+    });
+
+    var nuevo = document.createElement('tr');
+    nuevo.innerHTML = "<td></td><td>"+ tr.getAttribute("data-categoria") + "</td><td>" + tr.getAttribute("data-alimento") +"</td>";
+    table.append(nuevo);
+    return false;
+}
+
+function creartr(){
+    var tr = document.createElement('tr');
+
+    return tr;
+
 }
