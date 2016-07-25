@@ -1,7 +1,7 @@
 {
     "menu1": {
         "desayuno": [
-            ["cereal", "1", 50],
+            ["cereal", "1", 0.5],
             ["verdura", "13", 2],
             ["cereal", "2", 16]
         ],
