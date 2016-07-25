@@ -249,6 +249,9 @@ function cambiaLinea(id) {
 
 
 
+
+
+
     return false;
 }
 
@@ -272,15 +275,22 @@ function crearNuevoTR(id, cantidad, alimento, categoria) {
     btn.setAttribute("data-trigger", "focus");
     btn.setAttribute("title", "Cambiar ingrediente");
 
-    var content = getAlternativas(id, categoria, null);
-    console.log(content);
+    //var content = getAlternativas(id, categoria, null);
+    //console.log(content);
 
 
-    btn.setAttribute("data-content", content);
+    //btn.setAttribute("data-content", content);
     btn.innerHTML = '<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>';
 
 
     td1.appendChild(btn);
+
+        var content = getAlternativas(id, categoria, null);
+
+        $(btn).popover({
+            html: true,
+            content: content
+        });
     td2.innerHTML = cantidad;
     td3.innerHTML = alimento;
     td4.innerHTML = categoria;
@@ -293,6 +303,8 @@ function crearNuevoTR(id, cantidad, alimento, categoria) {
     tr.setAttribute("data-categoria", categoria);
     tr.setAttribute("data-alimento", alimento);
     tr.setAttribute("data-cantidad", cantidad);
+
+
 
     return tr;
 
@@ -344,3 +356,7 @@ function getAlternativas(trid, categoria, id) {
 
 
 }
+
+$(function () {
+    $('[data-toggle="popover"]').popover()
+});
