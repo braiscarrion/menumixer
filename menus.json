@@ -3,7 +3,7 @@
         "desayuno": [
             ["cereal", "1", 50],
             ["verdura", "13", 2],
-            ["carne", "2", 16]
+            ["cereal", "2", 16]
         ],
         "almuerzo": [],
         "comida": [],

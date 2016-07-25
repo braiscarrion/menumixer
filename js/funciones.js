@@ -103,19 +103,18 @@ function generarContenidoDia() {
 
                 var tr = document.createElement("tr");
                 var trid = "tab" + menu + "tr" + item;//itemalimentos[item[0]];
-                trid = trid.replace(",","")
+                trid = trid.replace(",", "")
                 tr.id = trid;
                 var td1 = document.createElement("td");
                 var btn = document.createElement("a");
+                btn.setAttribute("title", "Cambiar ingrediente");
                 btn.className = "btn btn-xs btn-default";
-
 
                 btn.setAttribute("tabindex", "0");
                 btn.setAttribute("role", "buttom");
                 btn.setAttribute("data-html", "true");
                 btn.setAttribute("data-toggle", "popover");
                 btn.setAttribute("data-trigger", "focus");
-                btn.setAttribute("title", "Cambiar ingrediente");
 
                 var content = "";
 
@@ -124,16 +123,19 @@ function generarContenidoDia() {
                     a.className = "deleteLink";
                     a.setAttribute("role", "buttom");
                     a.innerHTML = alimentos[item[0]][i + 1].nombre;
-                   a.setAttribute("trid", trid);
-                   a.setAttribute("onclick","cambiaLinea('"+trid+"')");
-                   /*a.addEventListener("click", function(){
+                    a.setAttribute("trid", trid);
+                    a.setAttribute("onclick", "cambiaLinea('" + trid + "')");
+                    /*a.addEventListener("click", function(){
 
-                        cambiaLinea(trid);
-                    });
-                    */
+                         cambiaLinea(trid);
+                     });
+                     */
                     //content += "<a class='deleteLink' role='buttom' onclick='cambiaLinea(\"" + trid + "\");return false;'>" + alimentos[item[0]][i + 1].nombre + "</a><br />";
                     content += a.outerHTML + "<br />";
                 }
+
+                var content = getAlternativas(trid, item[0], null);
+                console.log(content);
 
                 btn.setAttribute("data-content", content);
 
@@ -155,8 +157,9 @@ function generarContenidoDia() {
                 tr.appendChild(td3);
                 tr.appendChild(td4);
 
-                tr.setAttribute("data-categoria",item[0]);
+                tr.setAttribute("data-categoria", item[0]);
                 tr.setAttribute("data-alimento", alimentos[item[0]][item[1]].nombre);
+                tr.setAttribute("data-cantidad", item[2]);
 
                 tbody.appendChild(tr);
             });
@@ -213,6 +216,9 @@ function init() {
         });
     });
 
+    getAlimento("cereal", "2");
+    getAlternativas("asd", "cereal", "2");
+
 }
 
 function cambiaLinea(id) {
@@ -221,24 +227,120 @@ function cambiaLinea(id) {
     //var td = $(a).closest('td');
     //console.log(td);
     //var tr = $(td).closest('tr');
-    
-    var table = $(tr).closest('table');
 
-    //$(tr).css("background-color", "#FF3700");
-    $(tr).addClass("danger");
+    var table = $(tr).closest('table');
+    var cantidad = tr.getAttribute("data-cantidad");
+    var alimento = tr.getAttribute("data-alimento");
+    var categoria = tr.getAttribute("data-categoria");
+
+    $(tr).css("background-color", "#AA3300");
+    //$(tr).addClass("danger");
     $(tr).fadeOut(200, function () {
-        $(tr).remove();
+
+        //$(tr).remove();
+        var nuevo = crearNuevoTR(id, cantidad, alimento, categoria);
+        //table.append(nuevo);
+        $(tr).replaceWith(nuevo);
     });
 
-    var nuevo = document.createElement('tr');
-    nuevo.innerHTML = "<td></td><td>"+ tr.getAttribute("data-categoria") + "</td><td>" + tr.getAttribute("data-alimento") +"</td>";
-    table.append(nuevo);
+    //var nuevo = document.createElement('tr');
+    //nuevo.innerHTML = "<td></td><td>"+ tr.getAttribute("data-categoria") + "</td><td>" + tr.getAttribute("data-alimento") +"</td>";
+    //table.append(nuevo);
+
+
+
     return false;
 }
 
-function creartr(){
+function crearNuevoTR(id, cantidad, alimento, categoria) {
     var tr = document.createElement('tr');
+    tr.id = id;
+
+    var td1 = document.createElement("td");
+    var td2 = document.createElement("td");
+    var td3 = document.createElement("td");
+    var td4 = document.createElement("td");
+
+    var btn = document.createElement("a");
+
+    btn.setAttribute("data-original-title", "Cambiar ingrediente");
+    btn.className = "btn btn-xs btn-default";
+    btn.setAttribute("tabindex", "0");
+    btn.setAttribute("role", "buttom");
+    btn.setAttribute("data-html", "true");
+    btn.setAttribute("data-toggle", "popover");
+    btn.setAttribute("data-trigger", "focus");
+    btn.setAttribute("title", "Cambiar ingrediente");
+
+    var content = getAlternativas(id, categoria, null);
+    console.log(content);
+
+
+    btn.setAttribute("data-content", content);
+    btn.innerHTML = '<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>';
+
+
+    td1.appendChild(btn);
+    td2.innerHTML = cantidad;
+    td3.innerHTML = alimento;
+    td4.innerHTML = categoria;
+
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    tr.appendChild(td3);
+    tr.appendChild(td4);
+
+    tr.setAttribute("data-categoria", categoria);
+    tr.setAttribute("data-alimento", alimento);
+    tr.setAttribute("data-cantidad", cantidad);
 
     return tr;
+
+}
+
+function getAlimento(categoria, id) {
+    var toret;
+
+    $.ajax({
+        url: 'alimentos.json',
+        async: false,
+        dataType: 'json',
+        success: function (response) {
+            var cat = response[categoria];
+            toret = cat[id];
+        }
+    });
+
+    return toret;
+}
+
+function getCantidadNuevo(cantidad, viejo, nuevo) {
+    return Math.round(((cantidad * nuevo.cantidad) / viejo.cantidad) * 100) / 100;
+}
+
+function getAlternativas(trid, categoria, id) {
+    var lista = "";
+    $.ajax({
+        url: 'alimentos.json',
+        async: false,
+        dataType: 'json',
+        success: function (response) {
+            var cat = response[categoria];
+
+            for (var i = 1; i <= Object.keys(cat).length; i++) {
+                if (i != id) {
+                    var a = document.createElement('a');
+                    a.className = "deleteLink";
+                    a.setAttribute("role", "buttom");
+                    a.innerHTML = cat[i].nombre;
+                    a.setAttribute("trid", trid);
+                    a.setAttribute("onclick", "cambiaLinea('" + trid + "')");
+                    lista += a.outerHTML + "<br />";
+                }
+            }
+        }
+    });
+    return lista;
+
 
 }
