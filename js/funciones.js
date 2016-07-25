@@ -37,10 +37,8 @@ function generarDias() {
 
         tablist.appendChild(li);
         tabcontent.appendChild(div);
-
     }
 }
-
 
 function generarContenidoDia(dia) {
 
@@ -101,11 +99,10 @@ function generarContenidoDia(dia) {
                 var id_tr = "dia" + dia + "_desayuno_tr" + conttr;
 
                 var cantidad = item[2];
-                var alimento = alimentos[item[0]][item[1]].nombre;
                 var id_alimento = item[1];
                 var categoria = item[0]
 
-                var tr = crearNuevoTR(id_tr, cantidad, id_alimento, categoria);
+                var tr = crearTR(id_tr, cantidad, id_alimento, categoria);
                 conttr++;
                 tbody.appendChild(tr);
             });
@@ -117,17 +114,12 @@ function generarContenidoDia(dia) {
             desayunoPanel.appendChild(desayunoHeading);
             desayunoPanel.appendChild(desayunoBody);
             div.appendChild(desayunoPanel);
-
         },
         error: function (result) {
         }
     });
 
-
-
     return div;
-
-
 }
 
 function cambiaLinea(id_tr, id_alimento) {
@@ -144,16 +136,16 @@ function cambiaLinea(id_tr, id_alimento) {
 
     $(tr).css("background-color", "#AA3300");
     $(tr).fadeOut(200, function () {
-        var nuevo = crearNuevoTR(id_tr, nuevacantidad, id_alimento, categoria_tr);
+        var nuevo = crearTR(id_tr, nuevacantidad, id_alimento, categoria_tr);
         $(tr).replaceWith(nuevo);
     });
 
     return false;
 }
 
-function crearNuevoTR(id, cantidad, id_alimento, categoria) {
+function crearTR(id, cantidad, id_alimento, categoria) {
 
-    var alimento = getAlimento(categoria,id_alimento);
+    var alimento = getAlimento(categoria, id_alimento);
 
     var tr = document.createElement('tr');
     tr.setAttribute("id", id);
