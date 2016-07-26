@@ -162,7 +162,7 @@ function crearTR(id, cantidad, id_alimento, categoria) {
     btn.setAttribute("role", "buttom");
     btn.setAttribute("data-html", "true");
     btn.setAttribute("data-toggle", "popover");
-    btn.setAttribute("data-trigger", "focus");
+    //btn.setAttribute("data-trigger", "focus");
 
     btn.innerHTML = '<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>';
 

@@ -1,0 +1,11 @@
+.deleteLink {
+    display: inline-block;
+    width: 100%;
+
+}
+.deleteLink:hover {
+    background-color: #ccc;
+    cursor: cell;
+    text-decoration: none;
+    color: #000;
+}
