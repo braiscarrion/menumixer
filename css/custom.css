@@ -39,15 +39,21 @@ body {
 }
 
 .divComida {
-    min-width:100%;
+    display: table;
+    width: 100%;
 }
 
 .divIngredientes{
-    width: 70%;
-    float:left;
+    display: table-cell;
+    width: 75%;
+    vertical-align: top;
     padding-right: 20px;
 }
  .divReceta {
-    width: 30%;
-    float:left;
+    display: table-cell;
+    width: 25%;
+}
+
+.capital {
+    text-transform:capitalize;
 }

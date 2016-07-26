@@ -9,6 +9,48 @@
             "receta": "hacer a la plancha"
         },
         "almuerzo": {
+            "ingredientes" : [
+                ["cereal", "6", 0.5],
+                ["carne", "2", 5],
+                ["verdura", "2", 1]
+            ],
+            "receta": "bocadillo"
+        },
+        "comida": {
+            "ingredientes" : [
+                ["cereal", "1", 0.5],
+                ["verdura", "13", 2],
+                ["cereal", "2", 16]
+            ],
+            "receta": "hacer a la plancha"
+        },
+        "merienda": {
+            "ingredientes" : [
+                ["cereal", "1", 0.5],
+                ["verdura", "13", 2],
+                ["cereal", "2", 16]
+            ],
+            "receta": "hacer a la plancha"
+        },
+        "cena": {
+            "ingredientes" : [
+                ["cereal", "1", 0.5],
+                ["verdura", "13", 2],
+                ["cereal", "2", 16]
+            ],
+            "receta": "hacer a la plancha"
+        }
+    },
+    "menu2": {
+        "desayuno": {
+            "ingredientes" : [
+                ["cereal", "1", 0.5],
+                ["verdura", "13", 2],
+                ["cereal", "2", 16]
+            ],
+            "receta": "hacer a la plancha"
+        },
+        "almuerzo": {
             "ingredientes" : [],
             "receta": ""
         },

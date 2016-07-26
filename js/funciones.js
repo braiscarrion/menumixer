@@ -1,3 +1,18 @@
+
+function init() {
+    /**
+     * Ocultar popovers abiertos al abrir uno nuevo
+     */
+    $('[data-toggle="popover"]').click(function () {
+        //$('[data-toggle="popover"]').not(this).popover('hide'); //all but this
+    });
+
+    //activar popovers
+    $(function () {
+        //$('[data-toggle="popover"]').popover();
+    });
+}
+
 function generarDias() {
 
     window.usados = [];
@@ -79,61 +94,73 @@ function generarContenidoDia(dia) {
 
             window.usados.push(menu);
 
-            var desayunoPanel = document.createElement("div");
-            desayunoPanel.className = "panel panel-info";
-            var desayunoHeading = document.createElement("div");
-            desayunoHeading.className = "panel-heading";
-            desayunoHeading.innerHTML = "<h3 class='panel-title'>Desayuno</h3>";
-            var desayunoBody = document.createElement("div");
-            desayunoBody.className = "panel-body";
-
-            var divComida = document.createElement('div');
-            divComida.className = "divComida";
-            var divIngredientes = document.createElement('div');
-            divIngredientes.className = "divIngredientes";
-            var divReceta = document.createElement('div');
-            divReceta.className = "alert alert-info divReceta";
-
-            var table = document.createElement("table");
-            table.className = "table table-striped table-condensed";
-
-            var thead = document.createElement("thead");
-            thead.innerHTML = "<tr><th>#</th><th>Cantidad</th><th>Alimento</th><th>Grupo</th></tr>";
-
-            var tbody = document.createElement("tbody");
-
-            var conttr = 0;
-            response[menu].desayuno.ingredientes.forEach(function (item) {
-
-                var id_tr = "dia" + dia + "_desayuno_tr" + conttr;
-
-                var cantidad = item[2];
-                var id_alimento = item[1];
-                var categoria = item[0]
-
-                var tr = crearTR(id_tr, cantidad, id_alimento, categoria);
-                conttr++;
-                tbody.appendChild(tr);
-            });
-
-            table.appendChild(thead);
-            table.appendChild(tbody);
-
-            divIngredientes.appendChild(table);
-            divReceta.innerHTML = response[menu].desayuno.receta;
-            divComida.appendChild(divIngredientes);
-            divComida.appendChild(divReceta);
-            desayunoBody.appendChild(divComida);
-
-            desayunoPanel.appendChild(desayunoHeading);
-            desayunoPanel.appendChild(desayunoBody);
-            div.appendChild(desayunoPanel);
+            div.appendChild(getPanelComida(response[menu], "desayuno", dia, "info"));
+            div.appendChild(getPanelComida(response[menu], "almuerzo", dia, "primary"));
+            div.appendChild(getPanelComida(response[menu], "comida", dia, "success"));
+            div.appendChild(getPanelComida(response[menu], "merienda", dia, "warning"));
+            div.appendChild(getPanelComida(response[menu], "cena", dia, "danger"));
         },
         error: function (result) {
         }
     });
 
     return div;
+}
+
+function getPanelComida(menu, comida, dia, estilo) {
+
+    var panel = document.createElement("div");
+    panel.className = "panel panel-" + estilo;
+
+    var heading = document.createElement("div");
+    heading.className = "panel-heading";
+    heading.innerHTML = "<h3 class='panel-title capital'>" + comida + "</h3>";
+
+    var body = document.createElement("div");
+    body.className = "panel-body";
+
+    var divComida = document.createElement('div');
+    divComida.className = "divComida";
+    var divIngredientes = document.createElement('div');
+    divIngredientes.className = "divIngredientes";
+    var divReceta = document.createElement('div');
+    divReceta.className = "alert alert-" + estilo + " divReceta";
+
+    var table = document.createElement("table");
+    table.className = "table table-striped table-condensed";
+
+    var thead = document.createElement("thead");
+    thead.innerHTML = "<tr><th>#</th><th>Cantidad</th><th>Alimento</th><th>Grupo</th></tr>";
+
+    var tbody = document.createElement("tbody");
+
+    var conttr = 0;
+    menu[comida].ingredientes.forEach(function (item) {
+
+        var id_tr = "dia" + dia + "_" + comida + "_tr" + conttr;
+
+        var cantidad = item[2];
+        var id_alimento = item[1];
+        var categoria = item[0]
+
+        var tr = crearTR(id_tr, cantidad, id_alimento, categoria);
+        conttr++;
+        tbody.appendChild(tr);
+    });
+
+    table.appendChild(thead);
+    table.appendChild(tbody);
+
+    divIngredientes.appendChild(table);
+    divReceta.innerHTML = menu[comida].receta;
+    divComida.appendChild(divIngredientes);
+    divComida.appendChild(divReceta);
+    body.appendChild(divComida);
+
+    panel.appendChild(heading);
+    panel.appendChild(body);
+
+    return panel;
 }
 
 function cambiaLinea(id_tr, id_alimento) {
@@ -265,18 +292,4 @@ function getAlternativas(id_tr, categoria, id_alimento) {
         }
     });
     return lista;
-}
-
-function init() {
-    /**
-     * Ocultar popovers abiertos al abrir uno nuevo
-     */
-    $('[data-toggle="popover"]').click(function () {
-       // $('[data-toggle="popover"]').not(this).popover('hide'); //all but this
-    });
-
-    //activar popovers
-    $(function () {
-        //$('[data-toggle="popover"]').popover();
-    });
 }
