@@ -3,9 +3,25 @@
     width: 100%;
 
 }
+
 .deleteLink:hover {
     background-color: #ccc;
     cursor: cell;
     text-decoration: none;
     color: #000;
+}
+
+.divComida {
+    min-width:100%;
+    overflow: hidden;
+}
+
+.divIngredientes{
+    width: 70%;
+    float:left;
+    padding-right: 20px;
+}
+ .divReceta {
+    width: 30%;
+    float:left;
 }

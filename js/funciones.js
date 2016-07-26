@@ -85,6 +85,13 @@ function generarContenidoDia(dia) {
             var desayunoBody = document.createElement("div");
             desayunoBody.className = "panel-body";
 
+            var divComida = document.createElement('div');
+            divComida.className = "divComida";
+            var divIngredientes = document.createElement('div');
+            divIngredientes.className = "divIngredientes";
+            var divReceta = document.createElement('div');
+            divReceta.className = "alert alert-info divReceta";
+
             var table = document.createElement("table");
             table.className = "table table-striped table-condensed";
 
@@ -94,7 +101,7 @@ function generarContenidoDia(dia) {
             var tbody = document.createElement("tbody");
 
             var conttr = 0;
-            response[menu].desayuno.forEach(function (item) {
+            response[menu].desayuno.ingredientes.forEach(function (item) {
 
                 var id_tr = "dia" + dia + "_desayuno_tr" + conttr;
 
@@ -109,7 +116,12 @@ function generarContenidoDia(dia) {
 
             table.appendChild(thead);
             table.appendChild(tbody);
-            desayunoBody.appendChild(table);
+
+            divIngredientes.appendChild(table);
+            divReceta.innerHTML = response[menu].desayuno.receta;
+            divComida.appendChild(divIngredientes);
+            divComida.appendChild(divReceta);
+            desayunoBody.appendChild(divComida);
 
             desayunoPanel.appendChild(desayunoHeading);
             desayunoPanel.appendChild(desayunoBody);
