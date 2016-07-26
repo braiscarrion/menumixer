@@ -38,6 +38,8 @@ function generarDias() {
         tablist.appendChild(li);
         tabcontent.appendChild(div);
     }
+
+    init();
 }
 
 function generarContenidoDia(dia) {
@@ -174,7 +176,7 @@ function crearTR(id, cantidad, id_alimento, categoria) {
     btn.setAttribute("role", "buttom");
     btn.setAttribute("data-html", "true");
     btn.setAttribute("data-toggle", "popover");
-    //btn.setAttribute("data-trigger", "focus");
+    btn.setAttribute("data-trigger", "focus");
 
     btn.innerHTML = '<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>';
 
@@ -263,4 +265,18 @@ function getAlternativas(id_tr, categoria, id_alimento) {
         }
     });
     return lista;
+}
+
+function init() {
+    /**
+     * Ocultar popovers abiertos al abrir uno nuevo
+     */
+    $('[data-toggle="popover"]').click(function () {
+       // $('[data-toggle="popover"]').not(this).popover('hide'); //all but this
+    });
+
+    //activar popovers
+    $(function () {
+        //$('[data-toggle="popover"]').popover();
+    });
 }
