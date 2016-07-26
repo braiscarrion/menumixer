@@ -16,11 +16,10 @@ body {
     left: 0;
     padding: 1rem;
     text-align: center;
-    background-color: #bbb;
-    border-top: 2px solid #999;
-    color: white;
+    background-color: #e7e7e7;
+    border-top: 1px solid #c1c1c1;
     font-size: 12pt;
-    text-shadow: 1px 1px #333;
+    color: #777;
 }
 
 .footer a{
@@ -41,7 +40,6 @@ body {
 
 .divComida {
     min-width:100%;
-    overflow: hidden;
 }
 
 .divIngredientes{
