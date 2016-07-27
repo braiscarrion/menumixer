@@ -94,11 +94,9 @@ function generarContenidoDia(dia) {
 
             window.usados.push(menu);
 
-            div.appendChild(getPanelComida(response[menu], "desayuno", dia, "info"));
-            div.appendChild(getPanelComida(response[menu], "almuerzo", dia, "primary"));
-            div.appendChild(getPanelComida(response[menu], "comida", dia, "success"));
-            div.appendChild(getPanelComida(response[menu], "merienda", dia, "warning"));
-            div.appendChild(getPanelComida(response[menu], "cena", dia, "danger"));
+            for (comida in response[menu]) {
+                div.appendChild(getPanelComida(response[menu], comida, dia));
+            }
         },
         error: function (result) {
         }
@@ -107,10 +105,10 @@ function generarContenidoDia(dia) {
     return div;
 }
 
-function getPanelComida(menu, comida, dia, estilo) {
+function getPanelComida(menu, comida, dia) {
 
     var panel = document.createElement("div");
-    panel.className = "panel panel-" + estilo;
+    panel.className = "panel panel-info";
 
     var heading = document.createElement("div");
     heading.className = "panel-heading";
@@ -124,7 +122,7 @@ function getPanelComida(menu, comida, dia, estilo) {
     var divIngredientes = document.createElement('div');
     divIngredientes.className = "divIngredientes";
     var divReceta = document.createElement('div');
-    divReceta.className = "alert alert-" + estilo + " divReceta";
+    divReceta.className = "alert alert-info divReceta";
 
     var table = document.createElement("table");
     table.className = "table table-striped table-condensed";
