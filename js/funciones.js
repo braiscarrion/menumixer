@@ -70,8 +70,6 @@ function generarDias(numeroDias) {
         $('#ul_tablist').append(li);
         $('#div_tabcontent').append(div);
     }
-
-    init();
 }
 
 function generarContenidoDia(dia) {
