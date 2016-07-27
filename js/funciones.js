@@ -1,32 +1,49 @@
+//inicializa aplicación
+$(document).ready(function () {
+    //inicializador selector de número de dias según la configuración (variables.js)
+    $('#input_numerodias').attr("min", window.minDias);
+    $('#input_numerodias').attr("max", window.maxDias);
+    $('#input_numerodias').val(window.minDias);
+});
 
-function init() {
-    /**
-     * Ocultar popovers abiertos al abrir uno nuevo
-     */
-    $('[data-toggle="popover"]').click(function () {
-        //$('[data-toggle="popover"]').not(this).popover('hide'); //all but this
-    });
+//generar menus
+$('#btnGenerar').click(function () {
+    reiniciarContenidos();
+    resetUsados();
+    generarDias(getNumeroDias());
+});
 
-    //activar popovers
-    $(function () {
-        //$('[data-toggle="popover"]').popover();
-    });
+/**
+ * Vacia la lista de pestañas y el contenido de éstas
+ */
+function reiniciarContenidos() {
+    $('#ul_tablist').empty();
+    $('#div_tabcontent').empty();
 }
 
-function generarDias() {
+/**
+ * Comprueba si el número de dias indicado se encuentra dentro de los limites
+ *
+ * @returns numero de dias a generar
+ */
+function getNumeroDias() {
+    var dias = $('#input_numerodias').val();
+    if (dias < window.minDias)
+        dias = window.minDias;
+    if (dias > window.maxDias)
+        dias = window.maxDias;
+    $('#input_numerodias').val(dias);
+    return dias;
+}
 
+/**
+ * Vacía la lista de menus usados
+ */
+function resetUsados() {
     window.usados = [];
+}
 
-    var numeroDias = document.getElementById("input_numerodias").value;
-
-    var tablist = document.getElementById("ul_tablist");
-    var tabcontent = document.getElementById("div_tabcontent");
-
-    tablist.innerHTML = "";
-    tabcontent.innerHTML = "";
-
-    if (numeroDias < 1)
-        numeroDias = 1;
+function generarDias(numeroDias) {
 
     for (var i = 1; i <= numeroDias; i++) {
         var a = document.createElement("a");
@@ -50,8 +67,8 @@ function generarDias() {
         if (i == 1)
             div.className += " active";
 
-        tablist.appendChild(li);
-        tabcontent.appendChild(div);
+        $('#ul_tablist').append(li);
+        $('#div_tabcontent').append(div);
     }
 
     init();
@@ -82,7 +99,7 @@ function generarContenidoDia(dia) {
 
             var max = Object.keys(response).length;
             if (window.usados.length == max) {
-                window.usados = [];
+                resetUsados();
             }
             var random;
             var menu;
@@ -199,7 +216,6 @@ function crearTR(id, cantidad, id_alimento, categoria) {
     btn.setAttribute("class", "btn btn-xs btn-default");
     btn.setAttribute("tabindex", "0");
     btn.setAttribute("role", "buttom");
-    btn.setAttribute("data-html", "true");
     btn.setAttribute("data-toggle", "popover");
     btn.setAttribute("data-trigger", "focus");
 
