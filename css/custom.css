@@ -57,3 +57,7 @@ body {
 .capital {
     text-transform:capitalize;
 }
+
+.panel-resizable {
+    overflow: auto;
+}

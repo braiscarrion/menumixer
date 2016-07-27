@@ -130,7 +130,7 @@ function getPanelComida(menu, comida, dia) {
     heading.innerHTML = "<h3 class='panel-title capital'>" + comida + "</h3>";
 
     var body = document.createElement("div");
-    body.className = "panel-body";
+    body.className = "panel-body panel-resizable";
 
     var divComida = document.createElement('div');
     divComida.className = "divComida";
