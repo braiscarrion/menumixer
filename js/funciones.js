@@ -188,7 +188,8 @@ function cambiaLinea(id_tr, id_alimento) {
 
     var nuevacantidad = getCantidadNuevo(cantidad_tr, getAlimento(categoria_tr, id_alimento_tr), nuevoalimento);
 
-    $(tr).css("background-color", "#AA3300");
+    //$(tr).css("background-color", "#AA3300");
+    $(tr).addClass("danger");
     $(tr).fadeOut(200, function () {
         var nuevo = crearTR(id_tr, nuevacantidad, id_alimento, categoria_tr);
         $(tr).replaceWith(nuevo);
