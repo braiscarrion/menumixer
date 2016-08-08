@@ -35,11 +35,10 @@
             <h4>Menu Mixer <small>mix the ingredients from your favourite recipes</small></h4>
         </div>
 
-
         <div>
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Config</h3>
+                    <h3 class="panel-title">Configuraci&oacute;n</h3>
                 </div>
                 <div class="panel-body">
                     <form class="form-inline">
@@ -48,6 +47,8 @@
                             <input type="number" name="input_numerodias" id="input_numerodias" class="form-control" step="1">
                         </div>
                         <button type="button" class="btn btn-success" id="btnGenerar">Generar</button>
+                        <button type="button" class="btn btn-primary" id="btnExportar">Exportar men&uacute;s</button>
+                        <a class="btn btn-info" id="btnDescargar">Descargar imagen</a>
                     </form>
                 </div>
             </div>
@@ -60,6 +61,8 @@
                 <div class="tab-content" id="div_tabcontent">
                 </div>
             </div>
+
+            <div id="div_exportar"></div>
 
         </div>
     </div>
@@ -74,6 +77,8 @@
     <script src="dist/jquery/2.2.4/jquery-2.2.4.min.js"></script>
     <!-- Bootstrap JavaScript -->
     <script src="dist/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <!-- html2canvas -->
+    <script src="dist/html2canvas/html2canvas.js"></script>
 
     <!-- custom js -->
     <script src="js/funciones.js"></script>

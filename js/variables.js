@@ -8,3 +8,6 @@ window.maxDias = 7; //numero de dias maximo que se puede generar
  * variables globales
  */
 window.usados = []; //lista de menus utilizados
+window.numeroDias = 1; //numero de dias en la generacion actual
+
+window.imagen;

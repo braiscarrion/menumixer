@@ -4,13 +4,24 @@ $(document).ready(function () {
     $('#input_numerodias').attr("min", window.minDias);
     $('#input_numerodias').attr("max", window.maxDias);
     $('#input_numerodias').val(window.minDias);
+
+    //deshabilitar boton de exportar
+    $("#btnExportar").prop("disabled", true);
 });
 
 //generar menus
 $('#btnGenerar').click(function () {
     reiniciarContenidos();
     resetUsados();
-    generarDias(getNumeroDias());
+    setNumeroDias();
+    generarDias();
+
+    $("#btnExportar").prop("disabled", false);
+});
+
+//exportar menus a PNG
+$('#btnExportar').click(function () {
+    renderMenus();
 });
 
 /**
@@ -26,14 +37,15 @@ function reiniciarContenidos() {
  *
  * @returns numero de dias a generar
  */
-function getNumeroDias() {
+function setNumeroDias() {
     var dias = $('#input_numerodias').val();
     if (dias < window.minDias)
         dias = window.minDias;
     if (dias > window.maxDias)
         dias = window.maxDias;
     $('#input_numerodias').val(dias);
-    return dias;
+
+    window.numeroDias = dias;
 }
 
 /**
@@ -43,9 +55,9 @@ function resetUsados() {
     window.usados = [];
 }
 
-function generarDias(numeroDias) {
+function generarDias() {
 
-    for (var i = 1; i <= numeroDias; i++) {
+    for (var i = 1; i <= window.numeroDias; i++) {
         var a = document.createElement("a");
         a.setAttribute("href", "#tablist" + i);
         a.setAttribute("aria-controls", "tablist" + i);
@@ -306,3 +318,42 @@ function getAlternativas(id_tr, categoria, id_alimento) {
     });
     return lista;
 }
+
+function renderMenus() {
+
+    var div = document.createElement("div");
+
+    for (var i = 1; i <= window.numeroDias; i++) {
+        var tab = document.getElementById("tablist" + i);
+        var elementos = tab.getElementsByClassName("panel panel-info");
+        for (var j = 0; j < elementos.length; j++) {
+
+            var copia = elementos[j].cloneNode(true);
+            var table = copia.getElementsByClassName("table table-striped table-condensed")[0];
+            div.appendChild(table);
+
+        }
+
+    }
+
+    document.getElementById("div_exportar").appendChild(div);
+    //$('#div_exportar').append($(div));
+    //menusToImg(div);
+
+}
+
+function menusToImg(lista) {
+    html2canvas(lista, {
+        onrendered: function (canvas) {
+            window.imagen = canvas.toDataURL("image/png");
+        }
+    });
+}
+
+$("#btnDescargar").on('click', function () {
+    var newData = window.imagen.replace(/^data:image\/png/, "data:application/octet-stream");
+    var dt = new Date();
+    var fecha = dt.getFullYear() + "" + ("0" + (dt.getMonth() + 1)).slice(-2) + "" + ("0" + dt.getDay()).slice(-2) + "_" + dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
+    var nombre = "menus_" + fecha + ".png";
+    $("#btnDescargar").attr("download", nombre).attr("href", newData);
+});
