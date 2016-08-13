@@ -20,7 +20,7 @@
             "ingredientes" : [
                 ["Cereal", "1", 0.75],
                 ["Verdura", "8", 1],
-                ["Carne", "2", 80]
+                ["Carne", "2", 80],
                 ["Lácteo", "3", 40]
             ],
             "receta": "Cocer arroz y hacer el pollo a la plancha. Mezclar todo."
@@ -68,7 +68,7 @@
                 ["Verdura", "8", 0.33],
                 ["Verdura", "15", 0.33],
                 ["Verdura", "3", 0.5],
-                ["Carne", "2", 80]
+                ["Carne", "2", 80],
                 ["Lácteo", "2", 200]
             ],
             "receta": "Cocinar el pollo a la plancha. Preparar salsa Tzatziki: 200g de yogurt + zumo de 1/2 limón + pepino + sal + 1 diente de ajo + pimienta + menta/hierbabuena. Poner todos los ingredientes sobre la tortita y enrollar."
@@ -109,7 +109,7 @@
                 ["Cereal", "5", 1],
                 ["Verdura", "13", 0.5],
                 ["Verdura", "15", 0.5],
-                ["Carne", "2", 80]
+                ["Carne", "2", 80],
                 ["Grasas", "2", 1]
             ],
             "receta": "Hervir la pasta y cocinar el pollo a la plancha. Mezclar todos los ingredientes y aliñar con una salsa de limón + lemongrass + chili + menta + cilantro."
@@ -143,7 +143,7 @@
             "receta": ""
         },"Almuerzo": {
             "ingredientes" : [
-                ["Fruta", "1", 2]
+                ["Fruta", "1", 2],
                 ["Lácteo", "2", 200]
             ],
             "receta": "Mezclar fruta y yogurt"
@@ -259,7 +259,7 @@
                 ["Verdura", "13", 0.5],
                 ["Grasas", "3", 50]
             ],
-            "receta": "Hervir el arroz y cocinar el salmón a la plancha. Condimentar el arroz. Mezclar el aguacate, tomate y pepino con cebolla todo bien picado. Servir el arroz y la "salsa" como acompañamiento."
+            "receta": "Hervir el arroz y cocinar el salmón a la plancha. Condimentar el arroz. Mezclar el aguacate, tomate y pepino con cebolla todo bien picado. Servir el arroz y la \"salsa\" como acompañamiento."
         }
     },
         "menu7": {
@@ -291,7 +291,7 @@
         },
         "Merienda": {
             "ingredientes" : [
-                ["Fruta", "1", 1]
+                ["Fruta", "1", 1],
                 ["Lácteo", "2", 100]
             ],
             "receta": "Café con leche."
@@ -308,5 +308,5 @@
             ],
             "receta": "Hervir el arroz y el huevo. Cocinar las verduras con con el aceite, condimentar y añadir el arroz cocido. Hacer una salsa mezclando: Salsa de soja, chili, lima y ajo. Añadir salsa sobre el arroz, servir el arroz y poner encima el huevo cocido."
         }
-    },
+    }
 }
