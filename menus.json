@@ -3,7 +3,7 @@
         "Desayuno - Bol de Avena": {
             "ingredientes" : [
                 ["Cereal", "7", 0.5],
-                ["Lácteo", "1", 0.5],
+                ["Lacteo", "1", 0.5],
                 ["Fruta", "1", 1]
             ],
             "receta": ""
@@ -21,7 +21,7 @@
                 ["Cereal", "1", 0.75],
                 ["Verdura", "8", 1],
                 ["Carne", "2", 80],
-                ["Lácteo", "3", 40]
+                ["Lacteo", "3", 40]
             ],
             "receta": "Cocer arroz y hacer el pollo a la plancha. Mezclar todo."
         },
@@ -37,7 +37,7 @@
                 ["Carne", "8", 100],
                 ["Verdura", "13", 0.5],
                 ["Verdura", "2", 0.5],
-                ["Lácteo", "3", 40],
+                ["Lacteo", "3", 40],
                 ["Grasas", "2", 0.5]
             ],
             "receta": "Hervir la quinoa y hacer la carne a la plancha con el aceite. Sofreir las verduras junto a la carne, añadir especias. Mezclar con el resto de ingredientes."
@@ -50,7 +50,7 @@
                 ["Carne", "10", 1],
                 ["Verdura", "2", 0.5],
                 ["Verdura", "13", 0.5],
-                ["Lácteo", "1", 0.5]
+                ["Lacteo", "1", 0.5]
             ],
             "receta": "Preparar cafe con leche y 2 tostadas."
         },"almuerzo": {
@@ -69,7 +69,7 @@
                 ["Verdura", "15", 0.33],
                 ["Verdura", "3", 0.5],
                 ["Carne", "2", 80],
-                ["Lácteo", "2", 200]
+                ["Lacteo", "2", 200]
             ],
             "receta": "Cocinar el pollo a la plancha. Preparar salsa Tzatziki: 200g de yogurt + zumo de 1/2 limón + pepino + sal + 1 diente de ajo + pimienta + menta/hierbabuena. Poner todos los ingredientes sobre la tortita y enrollar."
         },
@@ -84,7 +84,7 @@
                 ["Cereal", "3", 0.5],
                 ["Carne", "13", 65],
                 ["Verdura", "11", 0.5],
-                ["Lácteo", "3", 40]
+                ["Lacteo", "3", 40]
             ],
             "receta": "Hervir la quinoa y la batata, hacer la carne a la plancha. Condimentar la quinoa con especias y el queso. Servir la carne y el resto de acompañamiento."
         }
@@ -100,7 +100,7 @@
             "ingredientes" : [
                 ["Verdura", "2", 2],
                 ["Fruta", "1", 1],
-                ["Lácteo", "2", 100]
+                ["Lacteo", "2", 100]
             ],
             "receta": "Poner ingredientes en la batidora, triturar."
         },
@@ -116,7 +116,7 @@
         },
         "Merienda": {
             "ingredientes" : [
-                ["Lácteo", "1", 1]  
+                ["Lacteo", "1", 1]  
             ],
             "receta": "Café con leche."
         },
@@ -126,7 +126,7 @@
                 ["Carne", "13", 65],
                 ["Verdura", "11", 0.5],
                 ["Verdura", "8", 1],
-                ["Lácteo", "3", 40]
+                ["Lacteo", "3", 40]
             ],
             "receta": "Hervir el arroz y la batata, hacer la carne a la plancha. Mezclar la batata con el queso y hacer un puré. Condimentar el arroz con especias y mezclar con la ensalada."
         }
@@ -144,7 +144,7 @@
         },"Almuerzo": {
             "ingredientes" : [
                 ["Fruta", "1", 2],
-                ["Lácteo", "2", 200]
+                ["Lacteo", "2", 200]
             ],
             "receta": "Mezclar fruta y yogurt"
         },
@@ -161,7 +161,7 @@
         },
         "Merienda": {
             "ingredientes" : [
-                ["Lácteo", "1", 1],
+                ["Lacteo", "1", 1],
                 ["Grasas", "4", 10]
             ],
             "receta": "Café con leche y frutos secos."
@@ -171,7 +171,7 @@
                 ["Cereal", "3", 0.5],
                 ["Carne", "2", 80],
                 ["Verdura", "8", 2],
-                ["Lácteo", "3", 40],
+                ["Lacteo", "3", 40],
                 ["Grasas", "2", 1]
             ],
             "receta": "Hervir la quinoa y cocinar el pollo a la plancha. Condimentar la quinoa con especias y el queso. Preparar la ensalada y aliñarla usando el aceite y especias al gusto."
@@ -181,7 +181,7 @@
         "desayuno": {
             "ingredientes" : [
                 ["Cereal", "7", 0.5],
-                ["Lácteo", "2", 200],
+                ["Lacteo", "2", 200],
                 ["Fruta", "1", 1]
             ],
             "receta": ""
@@ -189,7 +189,7 @@
             "ingredientes" : [
                 ["Grasas", "3", 25],
                 ["Verdura", "8", 2],
-                ["Lácteo", "1", 0.5]
+                ["Lacteo", "1", 0.5]
             ],
             "receta": "Preparar la ensalada con el aguacate y aliñar con una cucharada de limón y otra de vinagre. Salpimentar. Preparar café con leche."
         },
@@ -203,7 +203,7 @@
         },
         "Merienda": {
             "ingredientes" : [
-                ["Lácteo", "1", 1],
+                ["Lacteo", "1", 1],
                 ["Fruta", "2", 0.5]
             ],
             "receta": "Café con leche y mango o batirlo estilo smoothie."
@@ -225,8 +225,8 @@
         "Desayuno - Smoothie": {
             "ingredientes" : [
                 ["Cereal", "7", 0.5],
-                ["Lácteo", "2", 200],
-                ["Lácteo", "1", 0.5],
+                ["Lacteo", "2", 200],
+                ["Lacteo", "1", 0.5],
                 ["Fruta", "1", 1],
                 ["Verdura", "2", 2]
             ],
@@ -247,7 +247,7 @@
         },
         "Merienda": {
             "ingredientes" : [
-                ["Lácteo", "1", 1]
+                ["Lacteo", "1", 1]
             ],
             "receta": "Café con leche."
         },
@@ -269,7 +269,7 @@
                 ["Carne", "10", 2],
                 ["Verdura", "13", 0.5],
                 ["Verdura", "17", 0.5],
-                ["Lácteo", "1", 0.5]
+                ["Lacteo", "1", 0.5]
             ],
             "receta": ""
         },"Almuerzo": {
@@ -284,15 +284,15 @@
                 ["Cereal", "8", 1],
                 ["Verdura", "8", 2],
                 ["Carne", "1", 80],
-                ["Lácteo", "3", 40],
-                ["Lácteo", "2", 100]
+                ["Lacteo", "3", 40],
+                ["Lacteo", "2", 100]
             ],
             "receta": "Cocinar el pavo, poner sobre la tortita todos los ingredientes, añadir el queso y hacer una salsa con el yogur añadiendo especias. Enrollar la tortita."
         },
         "Merienda": {
             "ingredientes" : [
                 ["Fruta", "1", 1],
-                ["Lácteo", "2", 100]
+                ["Lacteo", "2", 100]
             ],
             "receta": "Café con leche."
         },
