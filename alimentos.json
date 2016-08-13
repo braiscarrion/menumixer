@@ -30,12 +30,12 @@
             "cantidad": 1,
             "medida": "rebanadas"
         },
-		 "7": {
+         "7": {
             "nombre": "avena",
             "cantidad": 0.5,
             "medida": "tazas"
         },
-		 "8": {
+         "8": {
             "nombre": "Tortita",
             "cantidad": 1,
             "medida": "porcion(es)"
@@ -107,22 +107,22 @@
             "cantidad": 0.5,
             "medida": "tazas"
         },
-		 "14": {
+         "14": {
             "nombre": "Apio",
             "cantidad": 0.5,
             "medida": "tazas"
         },
-		"15": {
+        "15": {
             "nombre": "Pepino",
             "cantidad": 0.5,
             "medida": "tazas"
         },
-		"16": {
+        "16": {
             "nombre": "Setas/Champiñones",
             "cantidad": 1,
             "medida": "tazas"
-        }
-		"17": {
+        },
+        "17": {
             "nombre": "Pimiento",
             "cantidad": 0.5,
             "medida": "tazas"
@@ -238,7 +238,7 @@
             "cantidad": 100,
             "medida": "gramos"
         },
-		"13": {
+        "13": {
             "nombre": "cerdo",
             "cantidad": 65,
             "medida": "gramos"
