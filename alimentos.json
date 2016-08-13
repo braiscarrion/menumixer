@@ -1,5 +1,5 @@
 {
-    "cereal": {
+    "Cereal": {
         "1": {
             "nombre": "arroz integral",
             "cantidad": 0.25,
@@ -16,7 +16,7 @@
             "medida": "tazas"
         },
         "4": {
-            "nombre": "fideos",
+            "nombre": "Fideos de arroz",
             "cantidad": 0.25,
             "medida": "tazas"
         },
@@ -29,9 +29,19 @@
             "nombre": "pan centeno",
             "cantidad": 1,
             "medida": "rebanadas"
+        },
+		 "7": {
+            "nombre": "avena",
+            "cantidad": 0.5,
+            "medida": "tazas"
+        },
+		 "8": {
+            "nombre": "Tortita",
+            "cantidad": 1,
+            "medida": "porción"
         }
     },
-    "verdura": {
+    "Verdura": {
         "1": {
             "nombre": "brocoli",
             "cantidad": 0.5,
@@ -53,7 +63,7 @@
             "medida": "tazas"
         },
         "5": {
-            "nombre": "habas",
+            "nombre": "alubias",
             "cantidad": 0.5,
             "medida": "tazas"
         },
@@ -94,15 +104,35 @@
         },
         "13": {
             "nombre": "tomate",
+            "cantidad": 0.5,
+            "medida": "tazas"
+        },
+		 "14": {
+            "nombre": "Apio",
+            "cantidad": 0.5,
+            "medida": "tazas"
+        },
+		"15": {
+            "nombre": "Pepino",
+            "cantidad": 0.5,
+            "medida": "tazas"
+        },
+		"16": {
+            "nombre": "Setas/Champiñones",
             "cantidad": 1,
-            "medida": "piezas"
+            "medida": "tazas"
+        }
+		"17": {
+            "nombre": "Pimiento",
+            "cantidad": 0.5,
+            "medida": "tazas"
         }
     },
-    "fruta": {
+    "Fruta": {
         "1": {
             "nombre": "cualquier fruta",
-            "cantidad": 150,
-            "medida": "gramos"
+            "cantidad": 1,
+            "medida": "tazas"
         },
         "2": {
             "nombre": "mango",
@@ -130,9 +160,9 @@
             "medida": "unidades"
         }
     },
-    "lacteo": {
+    "Lácteo": {
         "1": {
-            "nombre": "leche",
+            "nombre": "leche desnatada",
             "cantidad": 1,
             "medida": "tazas"
         },
@@ -147,7 +177,7 @@
             "medida": "gramos"
         }
     },
-    "carne": {
+    "Carne": {
         "1": {
             "nombre": "pavo",
             "cantidad": 80,
@@ -207,9 +237,14 @@
             "nombre": "atun",
             "cantidad": 100,
             "medida": "gramos"
+        },
+		"13": {
+            "nombre": "cerdo",
+            "cantidad": 65,
+            "medida": "gramos"
         }
     },
-    "grasas": {
+    "Grasas": {
         "1": {
             "nombre": "margarina",
             "cantidad": 10,
@@ -217,8 +252,8 @@
         },
         "2": {
             "nombre": "aceite de oliva",
-            "cantidad": 1.5,
-            "medida": "cucharadas"
+            "cantidad": 1,
+            "medida": "cucharada"
         },
         "3": {
             "nombre": "aguacate",
@@ -226,7 +261,7 @@
             "medida": "gramos"
         },
         "4": {
-            "nombre": "nueces",
+            "nombre": "Frutos secos",
             "cantidad": 10,
             "medida": "gramos"
         }
