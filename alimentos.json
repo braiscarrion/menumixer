@@ -38,7 +38,7 @@
 		 "8": {
             "nombre": "Tortita",
             "cantidad": 1,
-            "medida": "porción"
+            "medida": "porcion(es)"
         }
     },
     "Verdura": {
@@ -160,7 +160,7 @@
             "medida": "unidades"
         }
     },
-    "Lácteo": {
+    "Lacteo": {
         "1": {
             "nombre": "leche desnatada",
             "cantidad": 1,
