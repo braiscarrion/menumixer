@@ -65,3 +65,7 @@ body {
 .hide {
     display: none;
 }
+
+.btn-margin-top {
+    margin-top: 1px;
+}

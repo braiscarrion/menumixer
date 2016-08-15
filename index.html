@@ -30,7 +30,7 @@
 <body>
     <div class="container">
 
-<br />
+        <br />
         <div class="well well-sm">
             <h4>Menu Mixer <small>mix the ingredients from your favourite recipes</small></h4>
         </div>
@@ -46,9 +46,21 @@
                             <label for="input_numerodias">D&iacute;as</label>
                             <input type="number" name="input_numerodias" id="input_numerodias" class="form-control" step="1">
                         </div>
-                        <button type="button" class="btn btn-success" id="btnGenerar">Generar</button>
-                        <button type="button" class="btn btn-primary" id="btnExportar">Exportar men&uacute;s</button>
-                        <a class="btn btn-info" id="btnDescargar">Descargar imagen</a>
+                        <div class="form-group" id="divBotones">
+                            <button type="button" class="btn btn-success btn-margin-top" id="btnGenerar">
+                                <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+                                Generar
+                            </button>
+                            <button type="button" class="btn btn-primary btn-margin-top" id="btnBackGenerar">
+                                <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+                                Vista de Generar
+                            </button>
+                            <button type="button" class="btn btn-primary btn-margin-top" id="btnExportar">
+                                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                Vista de exportar
+                            </button>
+                            <div id="divDescargar"></div>
+                        </div>
                     </form>
                 </div>
             </div>

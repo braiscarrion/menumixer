@@ -5,8 +5,16 @@ $(document).ready(function () {
     $('#input_numerodias').attr("max", window.maxDias);
     $('#input_numerodias').val(window.minDias);
 
-    //deshabilitar boton de exportar
-    $("#btnExportar").prop("disabled", true);
+    //deshabilitar botones
+    //$("#btnExportar").prop("disabled", true);
+    //$("#btnBackGenerar").prop("disabled", true);
+
+    //ocultar botones
+    $("#btnExportar").hide();
+    $("#btnBackGenerar").hide();
+
+    //ocultar divs
+    $("#div_exportar").hide();
 });
 
 //generar menus
@@ -17,12 +25,60 @@ $('#btnGenerar').click(function () {
     generarDias();
 
     $("#btnExportar").prop("disabled", false);
+    $("#btnExportar").show();
+
 });
 
-//exportar menus a PNG
+//exportar menus a tabla html
 $('#btnExportar').click(function () {
+    $('#div_exportar').empty();
+    $('#divDescargar').empty();
     renderMenus();
+    toggleVisibility();
+
+    crearBtnDescargar();
+
 });
+
+//volver a vista de generar
+$('#btnBackGenerar').click(function () {
+    toggleVisibility();
+});
+
+
+
+// descargar menú como imagen
+$("#btnDescargar").on('click', function () {
+    alert("hola");
+    var newData = window.imagen.replace(/^data:image\/png/, "data:application/octet-stream");
+    var dt = new Date();
+    var fecha = dt.getFullYear() + "" + ("0" + (dt.getMonth() + 1)).slice(-2) + "" + ("0" + dt.getDay()).slice(-2) + "_" + dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
+    var nombre = "menus_" + fecha + ".png";
+    $("#btnDescargar").attr("download", nombre).attr("href", newData);
+});
+
+function crearBtnDescargar(){
+    
+    alert("aa");
+    var innerHTML = '<span class="glyphicon glyphicon-download" aria-hidden="true"></span> Descargar imagen';
+    var a = document.createElement("a");
+    a.id = "btnDescargar";
+    a.className = "btn btn-info btn-margin-top";
+    a.innerHTML = innerHTML;
+    $('#divDescargar').append(a);
+
+
+}
+
+//cambiar visibilidad elementos
+function toggleVisibility(){
+    $("#btnBackGenerar").toggle();
+    $("#btnExportar").toggle();
+    $("#btnGenerar").toggle();
+
+    $('#div_exportar').toggle();
+    $('#div_content').toggle();
+}
 
 /**
  * Vacia la lista de pestañas y el contenido de éstas
@@ -338,7 +394,7 @@ function renderMenus() {
 
     document.getElementById("div_exportar").appendChild(div);
     //$('#div_exportar').append($(div));
-    //menusToImg(div);
+    menusToImg(document.getElementById("div_exportar"));
 
 }
 
@@ -349,11 +405,3 @@ function menusToImg(lista) {
         }
     });
 }
-
-$("#btnDescargar").on('click', function () {
-    var newData = window.imagen.replace(/^data:image\/png/, "data:application/octet-stream");
-    var dt = new Date();
-    var fecha = dt.getFullYear() + "" + ("0" + (dt.getMonth() + 1)).slice(-2) + "" + ("0" + dt.getDay()).slice(-2) + "_" + dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
-    var nombre = "menus_" + fecha + ".png";
-    $("#btnDescargar").attr("download", nombre).attr("href", newData);
-});
